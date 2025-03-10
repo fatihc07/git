@@ -3,15 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Solar Eclipse Animation</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .sun {
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 50px rgba(255, 255, 0, 0.7);
+        }
+        .moon {
+            width: 120px;
+            height: 120px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: -130px;
+            transform: translateY(-50%);
+            animation: eclipse 4s linear infinite alternate;
+        }
+        @keyframes eclipse {
+            from {
+                left: -130px;
+            }
+            to {
+                left: 80px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>First version</p>
-    <p>Second versiyon</p>
-    <p>Third version</p>
-    <p>Fourth version</p>
-    <p>Fifth version</p>
-    <p>yeni güncellemedeler</p>
-    <p>üçüncü son</p>
+    <div class="container">
+        <div class="sun"></div>
+        <div class="moon"></div>
+    </div>
 </body>
 </html>
